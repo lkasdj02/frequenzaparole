@@ -31,7 +31,7 @@ void conta_frequenza(char *stringa, char *f, int lunghezza) {
     for (int i = 0; i < lunghezza; i++) { 
         // scrivere il codice per confrontare l'iesimo elemento di una stringa per poi salvarne la
         // frequenza all'interno dell'array frequenza
-        // INV alla fine di ogni i f[indice_frequenza] = stringa[i] - OFFSET + 1
+        // INV alla fine di ogni i f[indice_frequenza] = f[indice_frequenza] + 1;
         int indice_frequenza = stringa[i] - OFFSET_NUMERI;
         f[indice_frequenza]+=1; 
     }
