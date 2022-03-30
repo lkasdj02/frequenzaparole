@@ -5,16 +5,22 @@
 // definizione prototipi delle funzioni sottostanti al main
 void conta_frequenza(char *stringa, char *f, int lunghezza);
 int conta_lunghezza(char *stringa);
-void print_stringa(char *stringa); 
+void print_frequenza(char *stringa); 
 
 int main() {
+    // definizione variabili
     char stringa_input[LUNGHEZZA_MASSIMA];
     char frequenza[10];
-    scanf("%255s", stringa_input);    
-    int l = conta_lunghezza(stringa_input);
-    printf("%d", l);
-    // conta_frequenza(stringa_input, frequenza, l);
 
+    // inserimento della stringa
+    scanf("%255s", stringa_input);    
+
+    // calcolo lunghezza stringa
+    int l = conta_lunghezza(stringa_input); 
+    // printf("%d", l); questo serviva per debuggare
+    // calcolo e output della frequenza
+    conta_frequenza(stringa_input, frequenza, l);
+    print_frequenza(frequenza);
     // all'iesima riga aumento il contatore nella posizione i-esima
 
 }
@@ -32,4 +38,10 @@ int conta_lunghezza(char *stringa) {
     int i = 0; 
     while (stringa[i] != '\0') i++;
     return i;
+}
+
+void print_frequenza(char *frequenza) {
+    for(int i=0; i<10; i+=1) {
+        printf("frequenza %d: %d\n", i, frequenza[i]);
+    }
 }
