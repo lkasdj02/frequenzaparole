@@ -26,9 +26,12 @@ int main() {
 }
 
 void conta_frequenza(char *stringa, char *f, int lunghezza) {
+    // PRE f ha dimensione 10, con tutti gli elementi dell'array a zero
+    // PRE stringa ha dimensione lunghezza
     for (int i = 0; i < lunghezza; i++) { 
         // scrivere il codice per confrontare l'iesimo elemento di una stringa per poi salvarne la
         // frequenza all'interno dell'array frequenza
+        // INV 
         int indice_frequenza = stringa[i] - OFFSET_NUMERI;
         f[indice_frequenza]+=1; 
     }
